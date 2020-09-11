@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9a2ab843-b246-45bc-951f-4e6492bb9b6e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/pokemon/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon/src/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/pokemon" />
+  </component>
+  <component name="ProjectId" id="1hJCnwbIqyxbyLwalQ9QYBQqu7C" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="E:\WebStormWorkSpace\W6ExeStudent\pokemon\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9a2ab843-b246-45bc-951f-4e6492bb9b6e" name="Default Changelist" comment="" />
+      <created>1599719979541</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599719979541</updated>
+      <workItem from="1599719980785" duration="7874000" />
+      <workItem from="1599739203243" duration="2269000" />
+      <workItem from="1599742628993" duration="448000" />
+      <workItem from="1599743094821" duration="8435000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1259" height="62" key="GridCell.Tab.0.bottom" timestamp="1599739185734">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="62" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599739185734" />
+    <state width="1259" height="62" key="GridCell.Tab.0.center" timestamp="1599739185733">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="62" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599739185733" />
+    <state width="1259" height="62" key="GridCell.Tab.0.left" timestamp="1599739185733">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="62" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599739185733" />
+    <state width="1259" height="62" key="GridCell.Tab.0.right" timestamp="1599739185734">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="62" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599739185734" />
+    <state x="207" y="96" key="Vcs.Push.Dialog.v2" timestamp="1599788901642">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="207" y="96" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1599788901642" />
+    <state x="160" y="0" width="587" height="680" key="find.popup" timestamp="1599742587677">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="160" y="0" width="587" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1599742587677" />
+    <state x="443" y="247" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1599788936243">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="443" y="247" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1280.680@0.0.1280.680" timestamp="1599788936243" />
+  </component>
+</project>
