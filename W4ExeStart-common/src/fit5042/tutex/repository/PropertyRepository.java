@@ -74,5 +74,5 @@ public interface PropertyRepository {
      * properties
      * @return the properties found
      */
-    Set<Property> searchPropertyByContactPerson(ContactPerson contactPerson) throws Exception;
+    public Set<Property> searchPropertyByContactPerson(ContactPerson contactPerson) throws Exception;
 }
