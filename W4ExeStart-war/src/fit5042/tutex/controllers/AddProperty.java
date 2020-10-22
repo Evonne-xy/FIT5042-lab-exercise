@@ -43,7 +43,8 @@ public class AddProperty {
         return showForm;
     }
 
-    public AddProperty() {
+    public AddProperty() 
+    {
         ELContext context
                 = FacesContext.getCurrentInstance().getELContext();
 
@@ -60,7 +61,8 @@ public class AddProperty {
 
     public void addProperty(Property localProperty) {
         //this is the local property, not the entity
-        try {
+        try 
+        {
             //add this property to db via EJB
             propertyManagedBean.addProperty(localProperty);
 
@@ -68,7 +70,9 @@ public class AddProperty {
              app.searchAll();
 
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Property has been added succesfully"));
-        } catch (Exception ex) {
+        } 
+        catch (Exception ex) 
+        {
 
         }
         showForm = true;

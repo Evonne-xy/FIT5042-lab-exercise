@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+
+	<!-- basic -->
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- mobile metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+	<!-- site metas -->
+	<title>AUS Pringting Company</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<!-- site icons -->
+	<link rel="icon" href="resources/images/fevicon/fevicon.png"
+		type="image/gif" />
+	<!-- Owl Stylesheets -->
+	<link rel="stylesheet" type="text/css"
+		href="resources/css/owl.carousel.min.css" />
+	<!-- nice select css -->
+	<link rel="stylesheet" type="text/css"
+		href="resources/css/nice-select.min.css" />
+	<!-- bootstrap css -->
+	<link rel="stylesheet" href="resources/css/bootstrap.min.css" />
+	<!-- Site css -->
+	<link rel="stylesheet" href="resources/css/style.css" />
+	<!-- responsive css -->
+	<link rel="stylesheet" href="resources/css/responsive.css" />
+	<!-- custom css -->
+	<link rel="stylesheet" href="resources/css/custom.css" />
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</h:head>
+
+
+<body id="default_theme" class="contact_page sub_page">
+	<!-- loader -->
+	<div class="bg_load">
+		<img class="loader_animation" src="resources/images/loader.svg"
+			alt="#" />
+	</div>
+	<!-- end loader -->
+	<!-- hero area starts -->
+	<div class="hero_area">
+		<!-- header section starts -->
+		<header class="header_section"> <!-- navbar starts --> <nav
+			class="navbar navbar-expand-lg  header_navbar"> <a
+			class="navbar-brand" href="#"> <img
+			src="resources/images/printing2.jpg" alt="" /> <span> AUS
+				Pringting Company </span>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class=""> </span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto align-items-center">
+				<li class="nav-item"><a class="nav-link"
+					href="faces/index.xhtml"> Home </a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="faces/customer.xhtml"> Customer </a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="faces/CustomerContact.xhtml"> CustomerContact </a></li>
+			</ul>
+		</div>
+		</nav> </header>
+	</div>
+	<!-- navbar ends -->
+
+	<!-- page info starts -->
+	<div class="page_info layout_padding pr_mobile_20">
+		<div class="section_bg section_bg_left"></div>
+		<div class="container">
+			<div class="page_box">
+				<h2 class="page_name">Edit Customer</h2>
+				<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="faces/customer.xhtml">Customer</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Edit Customer</li>
+				</ol>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<!-- page info ends -->
+
+	<!-- Customer info starts -->
+	<div class="container">
+		<div class="navbar navbar-inverse">
+			<div class="navbar-brand">#{titleController.pageTitle} -
+				Edit Customer</div>
+		</div>
+
+		<h:form id="MyForm">
+			<table class="table table-bordered">
+				<tr>
+					<td width="150" valign="top">Id:</td>
+
+					<td valign="bottom"><h:outputLabel id="Id">#{CustomerController.customer.customerId}</h:outputLabel>
+					</td>
+				</tr>
+
+				<tr>
+					<td width="100" valign="top">Customer Name:</td>
+					<td valign="bottom"><h:inputText id="customerName"
+							value="#{CustomerController.customer.customerName}"
+							required="true"
+							validatorMessage="Please enter a valid Customer Name."
+							requiredMessage="Please enter an customer Name. "></h:inputText>
+					</td>
+				</tr>
+
+				<tr>
+					<td width="100" valign="top">customer CEO:</td>
+					<td valign="bottom"><h:inputText id="customerCEO"
+							value="#{CustomerController.customer.customerCEO}"
+							required="true"
+							validatorMessage="Please enter a valid customer CEO."
+							requiredMessage="Please enter an customer CEO "></h:inputText></td>
+				</tr>
+
+				<tr>
+					<td width="100" valign="top">Customer Address:</td>
+					<td valign="bottom"><h:inputText id="customerAddress"
+							value="#{CustomerController.customer.customerAddress}"
+							required="true"
+							validatorMessage="Please enter a valid Customer Address."
+							requiredMessage="Please enter an customer Address. "></h:inputText>
+					</td>
+				</tr>
+
+				<tr>
+					<td width="100" valign="top">Customer ABN:</td>
+					<td valign="bottom"><h:inputText id="customerABN"
+							value="#{CustomerController.customer.customerABN}"
+							required="true"
+							validatorMessage="Please enter a valid customerABN."
+							requiredMessage="Please enter an customerABN"
+							converterMessage="Please enter a number">
+							<f:convertNumber integerOnly="true" />
+							</h:inputText>
+					</td>
+				</tr>
+
+				<tr>
+					<td width="100" valign="top">Num Of People:</td>
+					<td valign="bottom"><h:inputText id="numOfPeople"
+							value="#{CustomerController.customer.numOfPeople}"
+							required="true"
+							validatorMessage="Please enter a valid Customer NumOfPeople"
+							requiredMessage="Please enter an customer NumOfPeople "
+							converterMessage="Please enter a number">
+							<f:convertNumber integerOnly="true" />
+							</h:inputText>
+					</td>
+				</tr>
+
+				<tr>
+					<td width="100" valign="top">Customer Rate:</td>
+					<td valign="bottom"><h:inputText id="customerRate"
+							value="#{CustomerController.customer.customerRate}"
+							required="true"
+							validatorMessage="Please enter a valid Customer Rate:"
+							requiredMessage="Please enter an Customer Rate: "></h:inputText>
+					</td>
+				</tr>		
+
+
+			</table>
+			<h:commandButton id="save" value="Save"
+				action="#{CustomerManagedBean.editCustomer(CustomerController.customer)}"
+				class="btn btn-primary">
+				<f:param name="customerID"
+					value="#{CustomerController.customerId+1}" />
+			</h:commandButton>
+			<h:link id="close" value="Close" outcome="faces/customer.xhtml"
+				class="btn btn-primary" />
+
+		</h:form>
+
+	</div>
+	<!-- Customer info ends -->
+
+
+	<!-- footer section -->
+	<footer class="footer_section ">
+	<p>
+		© <span id="displayDate"></span> All Rights Reserved. Design by <a
+			href="https://html.design/">YI XU</a>
+	</p>
+	</footer>
+	<!-- end  footer section -->
+
+	<!-- js section -->
+	<!-- jQuery -->
+	<script src="resources/js/jquery-3.4.1.min.js"></script>
+	<!-- bootstrap js -->
+	<script src="resources/js/bootstrap.min.js"></script>
+	<!-- owl slider -->
+	<script src="resources/js/owl.carousel.min.js"></script>
+	<!-- nice select -->
+	<script src="resources/js/jquery.nice-select.min.js"></script>
+	<!-- custom js -->
+	<script src="resources/js/custom.js"></script>
+
+	<!-- End Google Map -->
+
+</body>
+</html>
