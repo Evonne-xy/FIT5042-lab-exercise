@@ -3,7 +3,6 @@ package fit5042.tutex.repository;
 import java.util.List;
 import java.util.Set;
 import javax.ejb.Remote;
-import javax.persistence.PersistenceContext;
 
 import fit5042.tutex.repository.entities.ContactPerson;
 import fit5042.tutex.repository.entities.Property;
@@ -74,5 +73,5 @@ public interface PropertyRepository {
      * properties
      * @return the properties found
      */
-    Set<Property> searchPropertyByContactPerson(ContactPerson contactPerson) throws Exception;
+    public Set<Property> searchPropertyByContactPerson(ContactPerson contactPerson) throws Exception;
 }

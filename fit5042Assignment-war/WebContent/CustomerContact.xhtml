@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:p="http://xmlns.jcp.org/jsf/passthrough"> 
+<h:head> 
+
+	<!-- basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <!-- site metas -->
+    <title>AUS Pringting Company</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- site icons -->
+    <link rel="icon" href="resources/images/fevicon/fevicon.png" type="image/gif" />
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="resources/css/owl.carousel.min.css" />
+    <!-- nice select css -->
+    <link rel="stylesheet" type="text/css" href="resources/css/nice-select.min.css" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
+    <!-- Site css -->
+    <link rel="stylesheet" href="resources/css/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="resources/css/responsive.css" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="resources/css/custom.css" />
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </h:head> 
+    
+    
+<body id="default_theme" class="contact_page sub_page">
+    <!-- loader -->
+    <div class="bg_load"><img class="loader_animation" src="resources/images/loader.svg" alt="#" /></div>
+    <!-- end loader -->
+    <!-- hero area starts -->
+    <div class="hero_area">
+      <!-- header section starts -->
+      <header class="header_section">
+        <!-- navbar starts -->
+        <nav class="navbar navbar-expand-lg  header_navbar">
+          <a class="navbar-brand" href="#">
+            <img src="resources/images/printing2.jpg" alt="" />
+            <span>
+              AUS Pringting Company
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto align-items-center">
+             <li class="nav-item">
+                <a class="nav-link" href="faces/index.xhtml"> Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="faces/customer.xhtml"> Customer </a>
+              </li>           
+              <li class="nav-item">
+                <a class="nav-link" href="faces/CustomerContact.xhtml"> CustomerContact </a>
+              </li>
+            </ul>  
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- navbar ends -->
+       
+     <!-- page info starts -->   
+      <div class="page_info layout_padding pr_mobile_20">
+      <div class="section_bg section_bg_left"></div>
+      <div class="container">
+        <div class="page_box">
+          <h2 class="page_name">
+            Customer Contact Management 
+          </h2>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="faces/CustomerContact.xhtml">Customer Contact</a></li>
+              <li class="breadcrumb-item active" aria-current="page">HOME PAGE</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+	<!-- page info ends -->
+
+  <!-- Customer contact info starts -->
+  <div class = "container">
+    <div class = "navbar navbar-inverse">
+        <div class = "navbar-brand">
+            #{titleController.pageTitle} - Customer Contact List
+        </div>
+    </div>
+</div>
+    <h:form id="MyForm">
+           <table class="table table-bordered table-striped">
+           <tr>
+                   <td>
+                       <h:outputLabel id="Id" value="Id"  />
+                   </td>
+                   <td>
+                       <h:outputLabel id="contactEmail" value="contactEmail"  />
+                   </td>
+                   <td>
+                       <h:outputLabel id="contactPersonalPhone" value="contactPersonalPhone"  />
+                   </td>
+           </tr>
+           <ui:repeat id="Myrepeat" value = "#{AusApplication.customerContacts}" var = "customerContacts" varStatus="status">
+            <tr onclick="document.getElementById('MyForm:principle').value = document.getElementById('MyForm:Myrepeat:#{status.index}:outPrice').textContent">
+            <td>
+                <h:outputText value="#{AusApplication.customerContacts.get(status.index).contactId}" id="contactId" />
+                </td>
+                <td>
+                <h:outputText value="#{AusApplication.customerContacts.get(status.index).contactEmail}" id="contactEmail" />
+                </td>
+                <td>
+                <h:outputText value="#{AusApplication.customerContacts.get(status.index).contactPersonalPhone}" id="contactPersonalPhone"></h:outputText>
+                </td>
+                <td>
+                 <h:link value="View |" outcome = "faces/contactDetail.xhtml">
+                 <f:param name = "contactID" value = "#{status.index + 1}"/>
+                 </h:link>
+                 
+                 <h:link value = "Edit |" outcome = "faces/contactEdit.xhtml">
+                 <f:param name = "contactID" value = "#{status.index + 1}"/>
+                 </h:link>
+                 
+                 <h:commandLink value="Delete" action="#{removeContact.removeContact(AusApplication.customerContacts.get(status.index).contactId)}"
+                             disabled="#{AusApplication.customerContacts.get(status.index).contactId == null}">
+                            </h:commandLink>
+                 
+                 <h:outputText value = " "/>
+                </td>
+            </tr>
+            </ui:repeat>
+           
+            </table>
+            
+ 			<div>
+ 			<h:commandButton id="viewAll" value="View All" action="#{searchContact.searchAll()}" class="btn btn-primary" >
+                        <f:param name="contactID" value="#{status.index + 1}"/>
+                    </h:commandButton>
+ 			</div>
+            <div>
+                <h:inputText value="#{searchContact.searchByInt}" id="searchById" required="true" onchange ="if (document.getElementById('MyForm:searchById').value.trim() == '') {document.getElementById('MyForm:searchById').value = 0;} "   />
+                <h:commandButton id="searchId" value="Search by Id" action="#{searchContact.searchContactById(searchContact.searchByInt)}" class="btn btn-primary" >
+                    <f:param name="contactID" value="#{status.index + 1}"/>
+                </h:commandButton> 
+            </div>
+    </h:form>
+  <!-- Customer contact info ends -->
+  
+
+	<!-- footer section -->
+    <footer class="footer_section ">
+      <p>
+        © <span id="displayDate"></span> All Rights Reserved. Design by
+        <a href="https://html.design/">YI XU</a>
+      </p>
+    </footer>
+    <!-- end  footer section -->
+
+    <!-- js section -->
+    <!-- jQuery -->
+    <script src="resources/js/jquery-3.4.1.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="resources/js/bootstrap.min.js"></script>
+    <!-- owl slider -->
+    <script src="resources/js/owl.carousel.min.js"></script>
+    <!-- nice select -->
+    <script src="resources/js/jquery.nice-select.min.js"></script>
+    <!-- custom js -->
+    <script src="resources/js/custom.js"></script>
+   
+    <!-- End Google Map --> 
+
+</body> 
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="fit5042Assignment-ejbPU">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>jdbc/fit5042Assignment</jta-data-source>
+		<class>fit5042.assignment.repository.entities.Customer</class>
+		<class>fit5042.assignment.repository.entities.CustomerContact</class>
+		<class>fit5042.assignment.repository.entities.Industry</class>
+		<class>fit5042.assignment.repository.entities.Staff</class>
+		<class>fit5042.assignment.repository.entities.Administrator</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="eclipselink.ddl-generation" value="create" />
+		</properties>
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,80 @@
+drop table Sequence;
+drop table Tag;
+drop table CustomerContact;
+drop table customer;
+drop table Industry;
+
+INSERT INTO FIT5042.Industry (industry_id, industry_type) VALUES (1, 'Bank');
+INSERT INTO FIT5042.Industry (industry_id, industry_type) VALUES (2, 'Building');
+INSERT INTO FIT5042.Industry (industry_id, industry_type) VALUES (3, 'Data Communication');
+INSERT INTO FIT5042.Industry (industry_id, industry_type) VALUES (4, 'Education');
+INSERT INTO FIT5042.Industry (industry_id, industry_type) VALUES (5, 'Farm');
+INSERT INTO FIT5042.Industry (industry_id, industry_type) VALUES (6, 'Health');
+INSERT INTO FIT5042.Industry (industry_id, industry_type) VALUES (7, 'Mining');
+INSERT INTO FIT5042.Industry (industry_id, industry_type) VALUES (8, 'Publishing');
+
+
+INSERT INTO FIT5042.Customer (customer_id,customerAddress,customerAge,customerDriverLicense,customerFeedback,customerName,customerSex,industry_industry_id) 
+VALUES (1, 'Centre Rd &, Cooke St, Clayton VIC 3168',28,3711809,'Good','Ann','Male',1);
+
+INSERT INTO FIT5042.Customer (customer_id, customerAddress,customerAge,customerDriverLicense,customerFeedback,customerName,customerSex,industry_industry_id) 
+VALUES (2, '13 Duerdin St, Clayton VIC 3168',29,3711845,'not bad','David','Female',3);
+
+INSERT INTO FIT5042.Customer (customer_id, customerAddress,customerAge,customerDriverLicense,customerFeedback,customerName,customerSex,industry_industry_id)
+VALUES (3, '16 Burlington St, Oakleigh VIC 3166',25,3711568,'Excellent','Evonne','Female',2);
+
+INSERT INTO FIT5042.Customer (customer_id, customerAddress,customerAge,customerDriverLicense,customerFeedback,customerName,customerSex,industry_industry_id)
+VALUES (4, 'Hanover St &, Portman St, Oakleigh VIC 3166',88,3568568,'not bad','Eddie','Male',5);
+
+INSERT INTO FIT5042.Customer (customer_id, customerAddress,customerAge,customerDriverLicense,customerFeedback,customerName,customerSex,industry_industry_id) 
+VALUES (5, '23-35 Hanover St, Oakleigh VIC 3166',52,3555658,'Very good','Tom','Male',6);
+
+INSERT INTO FIT5042.Customer (customer_id, customerAddress,customerAge,customerDriverLicense,customerFeedback,customerName,customerSex,industry_industry_id) 
+VALUES (6, '41 Oxford St, Oakleigh VIC 3166',15,34569566,'not bad','Edison','Female',7);
+
+INSERT INTO FIT5042.Customer (customer_id, customerAddress,customerAge,customerDriverLicense,customerFeedback,customerName,customerSex,industry_industry_id) 
+VALUES (7, '14 Johnson St, Oakleigh VIC 3166',35,3456553,'service good','Zion','Male',4);
+
+INSERT INTO FIT5042.Customer (customer_id, customerAddress,customerAge,customerDriverLicense,customerFeedback,customerName,customerSex,industry_industry_id) 
+VALUES (8, '17-21 Eaton Mall, Oakleigh VIC 3166',23,34659852,'happy','Leo','Female',8);
+
+INSERT INTO FIT5042.Customer (customer_id, customerAddress,customerAge,customerDriverLicense,customerFeedback,customerName,customerSex,industry_industry_id)
+VALUES (9, '113 Warrigal Rd, Hughesdale VIC 3166',16,45646855,'Best','Jayden','Female',3);
+
+INSERT INTO FIT5042.Customer (customer_id, customerAddress,customerAge,customerDriverLicense,customerFeedback,customerName,customerSex,industry_industry_id) 
+VALUES (10, '48 Portman St, Oakleigh VIC 3166',34,526252,'not bad','Bob','Male',2);
+
+
+INSERT INTO FIT5042.CustomerContact (contact_id,contactPersonalPhone,contactEmail,contactFirstName,contactGender,contactLastName,contactPersonalPhone,customer_customer_id) 
+VALUES (1,0465598562,'nibh@uteros.org','(315) 194-7532',0432282685,2);
+
+INSERT INTO FIT5042.CustomerContact (contact_id,contactPersonalPhone,contactEmail,contactFax,contactCompanyPhone,customer_customer_id)  
+VALUES (2,056698562,'Nunc.commodo.auctor@egestasDuis.com','(297) 174-2121',0432258652,2);
+
+INSERT INTO FIT5042.CustomerContact (contact_id,contactPersonalPhone,contactEmail,contactFax,contactCompanyPhone,customer_customer_id) 
+VALUES (3,65699652,'augue@hendreritDonecporttitor.org','(913) 994-7662',0256559865,5);
+
+INSERT INTO FIT5042.CustomerContact (contact_id,contactPersonalPhone,contactEmail,contactFax,contactCompanyPhone,customer_customer_id)  
+VALUES (4,696553265,'Cras@mi.co.uk','(519) 254-5728',0456698562,5);
+
+INSERT INTO FIT5042.CustomerContact (contact_id,contactPersonalPhone,contactEmail,contactFax,contactCompanyPhone,customer_customer_id) 
+VALUES (5,69633654,'dis.parturient@euerat.net','(608) 849-0101',0456998236,8);
+
+INSERT INTO FIT5042.CustomerContact (contact_id,contactPersonalPhone,contactEmail,contactFax,contactCompanyPhone,customer_customer_id) 
+VALUES (6,658966321,'elit.dictum@Integertinciduntaliquam.edu','(414) 155-9618',0456696565,4);
+
+INSERT INTO FIT5042.CustomerContact (contact_id,contactPersonalPhone,contactEmail,contactFax,contactCompanyPhone,customer_customer_id) 
+VALUES (7,569889856,'nibh@uteros.org','(315) 194-7532',043228268,2);
+
+INSERT INTO FIT5042.CustomerContact (contact_id,contactPersonalPhone,contactEmail,contactFax,contactCompanyPhone,customer_customer_id) 
+VALUES (8,636698564,'convallis@lacusNullatincidunt.net','(423) 150-5671',0456989956,6);
+
+INSERT INTO FIT5042.CustomerContact (contact_id,contactPersonalPhone,contactEmail,contactFax,contactCompanyPhone,customer_customer_id) 
+VALUES (9,165978545,'id.sapien@Aliquamrutrum.com','(959) 591-1712',0456698658,3);
+
+INSERT INTO FIT5042.CustomerContact (contact_id,contactPersonalPhone,contactEmail,contactFax,contactCompanyPhone,customer_customer_id) 
+VALUES (10,16598745,'vitae@malesuadafames.ca','(244) 481-4249',0456698652,10);
+
+INSERT INTO FIT5042.CustomerContact (contact_id,contactPersonalPhone,contactEmail,contactFax,contactCompanyPhone,customer_customer_id) 
+VALUES (11,02366598,'mi.ac@ullamcorperviverra.ca','(327) 206-2160',0432555895,9);
+

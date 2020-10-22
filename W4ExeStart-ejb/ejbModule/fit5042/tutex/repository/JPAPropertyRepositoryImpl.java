@@ -31,6 +31,7 @@ public class JPAPropertyRepositoryImpl implements PropertyRepository {
         List<Property> properties = entityManager.createNamedQuery(Property.GET_ALL_QUERY_NAME).getResultList();
         property.setPropertyId(properties.get(0).getPropertyId() + 1);
         entityManager.persist(property);
+        entityManager.flush();
     }
 
     @Override

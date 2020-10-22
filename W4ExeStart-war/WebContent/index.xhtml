@@ -61,7 +61,8 @@
                                 <f:param name="propertyID" value="#{status.index + 1}"/>
                               </h:link>
 
-                                <h:commandLink value="Delete" action="#{removeProperty.removeProperty(propertyApplication.properties.get(status.index).propertyId)}" disabled="#{propertyApplication.properties.get(status.index).propertyId == null}">
+                                <h:commandLink value="Delete" action="#{removeProperty.removeProperty(propertyApplication.properties.get(status.index).propertyId)}"
+                                 disabled="#{propertyApplication.properties.get(status.index).propertyId == null}">
                                 </h:commandLink>
 
                                 <h:outputText value=" "/>
