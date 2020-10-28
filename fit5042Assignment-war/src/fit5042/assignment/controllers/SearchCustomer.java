@@ -35,7 +35,7 @@ public class SearchCustomer {
 		}
 		showForm = true;
 	}
-	
+	//-------------------------------------------------------
 	public void searchCustomerByName(String customerName) {
 		try {
 			ausApp.searchCustomerByName(customerName);
@@ -44,6 +44,16 @@ public class SearchCustomer {
 		}
 		showForm = true;
 	}
+	
+	public void searchCustomerByName2(String customerName) {
+		try {
+			ausApp.searchCustomerByName2(customerName);
+		}catch (Exception ex) {
+			
+		}
+		showForm = true;
+	}
+	//----------------------------------------------------------------
 	
 	public void searchAll() {
 		try {

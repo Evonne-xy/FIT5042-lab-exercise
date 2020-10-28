@@ -17,8 +17,13 @@ public class RemoveContact {
 	private boolean showForm = true;
 	private ContactTemporary contactTemporary;
 	AusApplication ausApp;
+	private int contactId;
 	
 	public RemoveContact() {
+		contactId = Integer.valueOf(FacesContext.getCurrentInstance()
+				.getExternalContext()
+				.getRequestParameterMap()
+				.get("contactID"));
 		ELContext context = FacesContext.getCurrentInstance().getELContext();
 		ausApp = (AusApplication) FacesContext.getCurrentInstance()
 				.getApplication()
@@ -29,7 +34,7 @@ public class RemoveContact {
 				.getELResolver().getValue(elContext, null, "CustomerContactManagedBean");
 	}
 	
-	public void removeContact(int contactId) {
+	public void removeContact() {
 		try {
 			customerContactManagedBean.removeCustomerContact(contactId);
 			ausApp.searchAllContact();
@@ -55,6 +60,16 @@ public class RemoveContact {
 	public void setContactTemporary(ContactTemporary contactTemporary) {
 		this.contactTemporary = contactTemporary;
 	}
+
+	public int getContactId() {
+		return contactId;
+	}
+
+	public void setContactId(int contactId) {
+		this.contactId = contactId;
+	}
 	
 
+	
+	
 }

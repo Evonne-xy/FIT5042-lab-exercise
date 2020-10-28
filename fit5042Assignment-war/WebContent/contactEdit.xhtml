@@ -163,16 +163,6 @@
 				</tr>
 
 
-				<tr>
-					<td width="100" valign="top">Customer Name:</td>
-					<td valign="bottom"><h:inputText id="customerName"
-							value="#{ContactController.customerContact.customer.customerName}"
-							required="true"
-							validatorMessage="Please enter a valid customerName"
-							requiredMessage="Please enter an customerName "></h:inputText></td>
-				</tr>
-
-
 			</table>
 			<h:commandButton id="save" value="Save"
 				action="#{CustomerContactManagedBean.editCustomerContact(ContactController.customerContact)}"

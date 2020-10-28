@@ -89,7 +89,7 @@ public class CustomerManageBean implements Serializable{
 
 	        return null;
 	}
-	
+	//-------------------------SEARCH -------------------------------------------
 	public Customer searchCustomerByName(String customerName) {
 		 try {
 	            return customerRepository.searchCustomerByName(customerName);
@@ -100,6 +100,16 @@ public class CustomerManageBean implements Serializable{
 	        return null;
 	}
 	
+	public List<Customer> searchCustomerByName2(String customerName) {
+		 try {
+	            return customerRepository.searchCustomerByName2(customerName);
+	        } catch (Exception ex) {
+	            Logger.getLogger(CustomerManageBean.class.getName()).log(Level.SEVERE, null, ex);
+	        }
+
+	        return null;
+	}
+	//--------------------------------------------------------------------
 	
 	
 	public Set<CustomerContact> searchCustomerContactByCustomer(Customer customer){

@@ -29,7 +29,7 @@ public class ContactController {
 					.getApplication()
 					.getELResolver().
 					getValue(context, null, "AusApplication");
-			return ausApp.getCustomerContacts().get(--contactId);
+			return ausApp.getContactById(contactId);
 		}
 		return customerContact;	
 	}

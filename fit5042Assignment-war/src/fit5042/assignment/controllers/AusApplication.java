@@ -111,22 +111,52 @@ public class AusApplication {
             	if(customer.getCustomerId() == customerId)
             	{
             		addCustomer = customer;
-            		return customer;
+            		return addCustomer;
             	}
             }
       
 		return addCustomer;
 	}
 	
+	// get contact through by id--> Addcontact
+		public CustomerContact getContactById(int contactId) {
+				CustomerContact customerContact = new CustomerContact();
+
+	            for (fit5042.assignment.repository.entities.CustomerContact customerContact2 : customerContactManagedBean.getAllCustomerContact())
+	            {
+	            	if(customerContact2.getContactId() == contactId)
+	            	{
+	            		customerContact = customerContact2;
+	            		return customerContact;
+	            	}
+	            }
+	      
+			return customerContact;
+		}
+	
+	
 	public void searchCustomerById(int id) {
 		customers.clear();
 		customers.add(customerManageBean.searchCustomerById(id));
 	}
 	
+	//------------------------------------------
 	public void searchCustomerByName(String customerName) {
 		customers.clear();
 		customers.add(customerManageBean.searchCustomerByName(customerName));
 	}
+	
+	public void searchCustomerByName2(String customerName) {
+		customers.clear();
+
+        for (fit5042.assignment.repository.entities.Customer customer : customerManageBean.searchCustomerByName2(customerName)) {
+        	customers.add(customer);
+        }
+
+        setCustomers(customers);
+	}
+	
+	//-----------------------------------------------------
 	
 	public void searchContactById(int id) {
 		customerContacts.clear();

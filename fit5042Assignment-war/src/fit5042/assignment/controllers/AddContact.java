@@ -3,20 +3,22 @@ package fit5042.assignment.controllers;
 import java.io.Console;
 import java.io.Serializable;
 
+import javax.annotation.PostConstruct;
 import javax.el.ELContext;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.ManagedProperty;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import fit5042.assignment.mbeans.CustomerContactManageBean;
 import fit5042.assignment.repository.entities.Customer;
 import fit5042.assignment.repository.entities.CustomerContact;
 
-
-@SessionScoped
-@Named("addContact")
+@ManagedBean(name = "addContact")
+@ViewScoped
 public class AddContact implements Serializable{
 	@ManagedProperty(value = "#{CustomerContactManagedBean}")
 	CustomerContactManageBean customerContactManageBean;
@@ -30,6 +32,11 @@ public class AddContact implements Serializable{
 	
 	public AddContact() {
 		
+		
+	}
+	
+	@PostConstruct
+	public void init() {
 		customerId = Integer.valueOf(FacesContext.getCurrentInstance()
 				.getExternalContext()
 				.getRequestParameterMap()
@@ -43,12 +50,13 @@ public class AddContact implements Serializable{
 				.getValue(context, null,"AusApplication" );
 		
 		ausApp.updateCustomerContactList();
-		ELContext elContext = FacesContext.getCurrentInstance().getELContext();
 		customerContactManageBean = (CustomerContactManageBean) FacesContext.getCurrentInstance().getApplication()
-                .getELResolver().getValue(elContext, null, "CustomerContactManagedBean");
+                .getELResolver().getValue(context, null, "CustomerContactManagedBean");
 		
 		customerContact = new CustomerContact();
 		setCustomer(ausApp.getCustomerById(customerId));	
+		
+		
 	}
 	
 

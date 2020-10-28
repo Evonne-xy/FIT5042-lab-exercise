@@ -73,6 +73,7 @@ public class Customer implements Serializable{
 		this.customerId = customerId;
 	}
 
+	@Column(name = "customername")
 	public String getCustomerName() {
 		return customerName;
 	}
@@ -132,7 +133,7 @@ public class Customer implements Serializable{
 
 	//Each contactNumber has one and only one contact person. 
     //Each customer might be responsible for zero to many contactNumber
-	@OneToMany (mappedBy = "customer",fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
+	@OneToMany (mappedBy = "customer",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	public Set<CustomerContact> getCustomerContact() {
 		return customerContact;
 	}
