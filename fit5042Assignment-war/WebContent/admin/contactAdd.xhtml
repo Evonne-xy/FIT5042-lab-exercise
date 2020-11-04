@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+
+	<!-- basic -->
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- mobile metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+	<!-- site metas -->
+	<title>AUS Pringting Company</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<!-- site icons -->
+	<link rel="icon" href="resources/images/fevicon/fevicon.png"
+		type="image/gif" />
+	<!-- Owl Stylesheets -->
+	<link rel="stylesheet" type="text/css"
+		href="resources/css/owl.carousel.min.css" />
+	<!-- nice select css -->
+	<link rel="stylesheet" type="text/css"
+		href="resources/css/nice-select.min.css" />
+	<!-- bootstrap css -->
+	<link rel="stylesheet" href="resources/css/bootstrap.min.css" />
+	<!-- Site css -->
+	<link rel="stylesheet" href="resources/css/style.css" />
+	<!-- responsive css -->
+	<link rel="stylesheet" href="resources/css/responsive.css" />
+	<!-- custom css -->
+	<link rel="stylesheet" href="resources/css/custom.css" />
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</h:head>
+
+
+<body id="default_theme" class="contact_page sub_page">
+	<!-- loader -->
+	<div class="bg_load">
+		<img class="loader_animation" src="resources/images/loader.svg"
+			alt="#" />
+	</div>
+	<!-- end loader -->
+	<!-- hero area starts -->
+	<div class="hero_area">
+		<!-- header section starts -->
+		<header class="header_section"> <!-- navbar starts --> <nav
+			class="navbar navbar-expand-lg  header_navbar"> <a
+			class="navbar-brand" href="#"> <img
+			src="resources/images/printing2.jpg" alt="" /> <span> AUS
+				Pringting Company </span>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class=""> </span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto align-items-center">
+				<li class="nav-item"><a class="nav-link"
+					href="faces/index.xhtml"> Home </a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="faces/customer.xhtml"> Customer </a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="faces/CustomerContact.xhtml"> CustomerContact </a></li>
+			</ul>
+		</div>
+		</nav> </header>
+	</div>
+	<!-- navbar ends -->
+
+	<!-- page info starts -->
+	<div class="page_info layout_padding pr_mobile_20">
+		<div class="section_bg section_bg_left"></div>
+		<div class="container">
+			<div class="page_box">
+				<h2 class="page_name">Customer Management</h2>
+				<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="faces/customer.xhtml">Customer</a></li>
+					<li class="breadcrumb-item active" aria-current="page">HOME
+						PAGE</li>
+				</ol>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<!-- page info ends -->
+
+	<!-- Contact info starts -->
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+
+	<div class="container">
+		<div>
+			<f:view>
+				<h:form>
+					<h1>
+						<h:outputText value="Create" />
+					</h1>
+
+					<table class="table table-bordered ">
+
+						<tr>
+							<td width="200"><h:outputLabel value="Customer ID" for="ID" /></td>
+							<td><h:outputText id="ID" value="#{addContact.customerId}"
+									title="ID" /></td>
+						</tr>
+
+						<tr>
+							<td width="200"><h:outputLabel value="contactFirstName"
+									for="contactFirstName" /></td>
+							<td><h:inputText id="contactFirstName"
+									value="#{addContact.customerContact.contactFirstName}"
+									title="contactFirstName" /></td>
+						</tr>
+
+						<tr>
+							<td width="200"><h:outputLabel value="contactLastName"
+									for="contactLastName" /></td>
+							<td><h:inputText id="contactLastName"
+									value="#{addContact.customerContact.contactLastName}"
+									title="contactLastName" /></td>
+						</tr>
+
+						<tr>
+							<td width="200"><h:outputLabel value="contactEmail"
+									for="contactEmail" /></td>
+							<td><h:inputText id="contactEmail"
+									value="#{addContact.customerContact.contactEmail}"
+									title="contactEmail" /></td>
+						</tr>
+
+						<tr>
+							<td width="200"><h:outputLabel value="contactGender"
+									for="contactGender" /></td>
+							<td><h:inputText id="contactGender"
+									value="#{addContact.customerContact.contactGender}"
+									title="contactGender" /></td>
+						</tr>
+
+						<tr>
+							<td width="200"><h:outputLabel value="contactPersonalPhone"
+									for="contactPersonalPhone" /></td>
+							<td><h:inputText id="contactPersonalPhone"
+									value="#{addContact.customerContact.contactPersonalPhone}"
+									title="contactPersonalPhone" /></td>
+						</tr>
+
+					</table>
+
+
+					<h:commandButton id="submit" value="Submit"
+						action="#{addContact.addContact()}" class="btn btn-primary">
+					</h:commandButton>
+
+					<h:link id="close" value="Close"
+						outcome="customerDetail.xhtml" class="btn btn-primary">
+						<f:param name="customerID" value="#{addContact.customerId}" />
+					</h:link>
+
+				</h:form>
+			</f:view>
+		</div>
+	</div>
+	<!-- Customer info ends -->
+
+
+	<!-- footer section -->
+	<footer class="footer_section ">
+	<p>
+		© <span id="displayDate"></span> All Rights Reserved. Design by <a
+			href="https://html.design/">YI XU</a>
+	</p>
+	</footer>
+	<!-- end  footer section -->
+
+	<!-- js section -->
+	<!-- jQuery -->
+	<script src="resources/js/jquery-3.4.1.min.js"></script>
+	<!-- bootstrap js -->
+	<script src="resources/js/bootstrap.min.js"></script>
+	<!-- owl slider -->
+	<script src="resources/js/owl.carousel.min.js"></script>
+	<!-- nice select -->
+	<script src="resources/js/jquery.nice-select.min.js"></script>
+	<!-- custom js -->
+	<script src="resources/js/custom.js"></script>
+
+	<!-- End Google Map -->
+
+</body>
+</html>

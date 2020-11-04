@@ -1,11 +1,15 @@
 drop table Sequence;
 drop table Tag;
 drop table CustomerContact;
+drop table Administrator;
+drop table STAFF_CUSTOMER;
+drop table APPUSER_CUSTOMER;
 drop table customer;
 drop table Industry;
 drop table Staff;
-drop table Administrator;
-drop table STAFF_CUSTOMER;
+drop table APPUSER;
+
+
 
 ----------------------Industry----------------------------------------
 INSERT INTO FIT5042.Industry (industry_id, industry_type) VALUES (1, 'Bank');
@@ -19,57 +23,61 @@ INSERT INTO FIT5042.Industry (industry_id, industry_type) VALUES (8, 'Publishing
 
 
 
-----------------------Staff----------------------------------------
-INSERT INTO FIT5042.Staff (staffId,dob,staffName,userName) values (1,'01/05/1992','bob','staff');
-INSERT INTO FIT5042.Staff (staffId,dob,staffName,userName) values (2,'03/05/1995','Edison','staff');
-INSERT INTO FIT5042.Staff (staffId,dob,staffName,userName) values (3,'04/03/1990','Eddie','staff');
-INSERT INTO FIT5042.Staff (staffId,dob,staffName,userName) values (4,'02/08/1998','Anna','staff');
+----------------------USER----------------------------------------
+INSERT INTO FIT5042.APPUSER(id,username,userType,password) values (1,'admin@gmail.com','A','123');
+INSERT INTO FIT5042.APPUSER(id,username,userType,password) values (2,'staff@gmail.com','S','123');
+INSERT INTO FIT5042.APPUSER(id,username,userType,password) values (3,'staff2@gmail.com','S','123');
 
+INSERT INTO FIT5042.Administrator(adminId,adminName) values (1,'Alice');
+INSERT INTO FIT5042.Staff(staffId,staffname,dob) values (2,'Brown','01/05/1992');
+INSERT INTO FIT5042.Staff(staffId,staffname,dob) values (3,'Crains','01/05/1992');
 
+--------------------------------UPDATE-----------------------------------------------------
+INSERT INTO FIT5042.APPUSER(id,username,userType,password,dob,userlevel) values (1,'admin@gmail.com','A','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3','01/05/1992','A');
+INSERT INTO FIT5042.APPUSER(id,username,userType,password,dob) values (2,'staff@gmail.com','S','123','01/05/1992');
+INSERT INTO FIT5042.APPUSER(id,username,userType,password,dob) values (3,'staff2@gmail.com','S','123','01/05/1992');
 
 ----------------------Customer----------------------------------------
 INSERT INTO FIT5042.Customer (customer_id,customerABN,customerAddress,customerCEO,customerName,customerRate,
-NumOfPeople,industry_industry_id,staffId_staffId) 
-VALUES (1, 136455646,'Centre Rd &, Cooke St, Clayton VIC 3168','Bob Zhang','Ann',5.2,26,1,1);
+NumOfPeople,industry_industry_id,APPUSER_ID) 
+VALUES (1, 136455646,'Centre Rd &, Cooke St, Clayton VIC 3168','Bob Zhang','Ann',5.2,26,1,2);
 
 INSERT INTO FIT5042.Customer (customer_id,customerABN,customerAddress,customerCEO,customerName,customerRate,
-NumOfPeople,industry_industry_id,staffId_staffId) 
+NumOfPeople,industry_industry_id,APPUSER_ID) 
 VALUES (2, 166484495,'13 Duerdin St, Clayton VIC 3168', 'Karin Anila','Keighley Arlene',5.3,16,2,3);
 
 INSERT INTO FIT5042.Customer (customer_id,customerABN,customerAddress,customerCEO,customerName,customerRate,
-NumOfPeople,industry_industry_id,staffId_staffId) 
+NumOfPeople,industry_industry_id,APPUSER_ID) 
 VALUES (3, 166484495,'16 Burlington St, Oakleigh VIC 3166', 'Kourtney Elvina','Kade Janet',2.8,15,4,2);
 
 INSERT INTO FIT5042.Customer (customer_id,customerABN,customerAddress,customerCEO,customerName,customerRate,
-NumOfPeople,industry_industry_id,staffId_staffId) 
+NumOfPeople,industry_industry_id,APPUSER_ID) 
 VALUES (4, 166484495,'23-35 Hanover St, Oakleigh VIC 3166', 'Kiki Fedora','Ryana Perry',9.8,18,8,2);
 
 INSERT INTO FIT5042.Customer (customer_id,customerABN,customerAddress,customerCEO,customerName,customerRate,
-NumOfPeople,industry_industry_id,staffId_staffId) 
-VALUES (5, 645898546,'41 Oxford St, Oakleigh VIC 3166', 'Kate-Lynn','Scarlett Mcallister',9.2,25,5,4);
+NumOfPeople,industry_industry_id,APPUSER_ID) 
+VALUES (5, 645898546,'41 Oxford St, Oakleigh VIC 3166', 'Kate-Lynn','Scarlett Mcallister',9.2,25,5,3);
 
 INSERT INTO FIT5042.Customer (customer_id,customerABN,customerAddress,customerCEO,customerName,customerRate,
-NumOfPeople,industry_industry_id,staffId_staffId) 
+NumOfPeople,industry_industry_id,APPUSER_ID) 
 VALUES (6, 16894165,'14 Johnson St, Oakleigh VIC 3166', 'Keegan Theodora','Summer Meyer',8.5,36,7,3);
 
 INSERT INTO FIT5042.Customer (customer_id,customerABN,customerAddress,customerCEO,customerName,customerRate,
-NumOfPeople,industry_industry_id,staffId_staffId) 
-VALUES (7, 598453545,'17-21 Eaton Mall, Oakleigh VIC 3166', 'Kamille Tam','Sarah Marker',8.8,45,6,1);
+NumOfPeople,industry_industry_id,APPUSER_ID) 
+VALUES (7, 598453545,'17-21 Eaton Mall, Oakleigh VIC 3166', 'Kamille Tam','Sarah Marker',8.8,45,6,2);
 
 INSERT INTO FIT5042.Customer (customer_id,customerABN,customerAddress,customerCEO,customerName,customerRate,
-NumOfPeople,industry_industry_id,staffId_staffId) 
-VALUES (8, 645898546,'113 Warrigal Rd, Hughesdale VIC 3166', 'Haider Mckay','Homer Mccluskey',9.2,25,5,4);
+NumOfPeople,industry_industry_id,APPUSER_ID) 
+VALUES (8, 645898546,'113 Warrigal Rd, Hughesdale VIC 3166', 'Haider Mckay','Homer Mccluskey',9.2,25,5,3);
 
 INSERT INTO FIT5042.Customer (customer_id,customerABN,customerAddress,customerCEO,customerName,customerRate,
-NumOfPeople,industry_industry_id,staffId_staffId) 
+NumOfPeople,industry_industry_id,APPUSER_ID) 
 VALUES (9, 16894165,'48 Portman St, Oakleigh VIC 3166', 'Stephanie Mcarthur','Sadie Millar',8.5,36,7,3);
 
 INSERT INTO FIT5042.Customer (customer_id,customerABN,customerAddress,customerCEO,customerName,customerRate,
-NumOfPeople,industry_industry_id,staffId_staffId) 
-VALUES (10, 598453545,'405 Neerim road, Oakleigh VIC 3166', 'Sara Mayer','Sofia Macarthur',8.8,45,6,1);
+NumOfPeople,industry_industry_id,APPUSER_ID) 
+VALUES (10, 598453545,'405 Neerim road, Oakleigh VIC 3166', 'Sara Mayer','Sofia Macarthur',8.8,45,6,2);
 
-INSERT INTO FIT5042.CustomerContact (contact_id,contactEmail,contactFax,contactCompanyPhone,customer_customer_id) 
-VALUES (1,0465598562,'nibh@uteros.org','(315) 194-7532',0432282685,2);
 
 
 

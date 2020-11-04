@@ -4,6 +4,7 @@ import java.io.Console;
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.el.ELContext;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
@@ -34,6 +35,7 @@ public class AddContact implements Serializable{
 		
 		
 	}
+
 	
 	@PostConstruct
 	public void init() {
@@ -58,7 +60,6 @@ public class AddContact implements Serializable{
 		
 		
 	}
-	
 
 	public void addContact() {
 		try {
@@ -68,8 +69,10 @@ public class AddContact implements Serializable{
 			ausApp.searchAllContact();
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Contact has been added succesfully"));
 			
-		} catch (Exception e) {
-			// TODO: handle exception
+		} 
+		catch (Exception e) {
+			
+		e.printStackTrace();
 		}
 		showForm = true;
 	}

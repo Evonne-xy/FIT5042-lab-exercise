@@ -3,63 +3,63 @@ package fit5042.assignment.repository;
 import java.util.List;
 import java.util.Set;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import fit5042.assignment.repository.entities.AppUser;
 import fit5042.assignment.repository.entities.Customer;
 import fit5042.assignment.repository.entities.Staff;
 
-public class JPAStaffRepositoryImpl implements StaffRepository{
+@Stateless
+public class JPAAppUserRepositoryImpl implements AppUserRepository{
 	
 	@PersistenceContext(unitName = "fit5042Assignment-ejbPU")
     private EntityManager entityManager;
 
 	@Override
-	public List<Staff> getAllStaff() throws Exception {
-		return entityManager.createNamedQuery(Staff.GET_ALL_QUERY_NAME).getResultList();
+	public List<AppUser> getAllAppUser() throws Exception {
+		return entityManager.createNamedQuery(AppUser.GET_ALL_QUERY_NAME).getResultList();
+	}
+	
+	@Override
+	public List<Staff> getAllStaffs() throws Exception {
+		return entityManager.createNamedQuery(AppUser.GET_ALL_QUERY_NAME).getResultList();
 	}
 
 	@Override
-	public void addCustomerContact(Staff staff) throws Exception {
-		List<Staff> staffs = entityManager.createNamedQuery(Staff.GET_ALL_QUERY_NAME).getResultList();
-		staff.setStaffId(staffs.get(0).getStaffId() + 1);
-        entityManager.persist(staff);
+	public void addAppUser(AppUser appUser) throws Exception {
+		List<AppUser> appUsers = entityManager.createNamedQuery(AppUser.GET_ALL_QUERY_NAME).getResultList();
+		//appUser.setId(appUsers.get(0).getId() + 1);
+        entityManager.persist(appUser);
         entityManager.flush();
 		
 	}
 
 	@Override
-	public void removeCustomerContact(int StaffId) throws Exception {
-		Staff staff = this.searchStaffById(StaffId);
-        if (staff != null) {
-            entityManager.remove(StaffId);
+	public void removeAppUser(int Id) throws Exception {
+		AppUser appUser = this.searchAppUserById(Id);
+        if (appUser != null) {
+            entityManager.remove(appUser);
         }
 		
 	}
 
 	@Override
-	public void editStaff(Staff staff) throws Exception {
+	public void editAppUser(AppUser appUser) throws Exception {
 		try {
-            entityManager.merge(staff);
+            entityManager.merge(appUser);
         } catch (Exception ex) {
 
-        }
-		
+        }	
 	}
 
 	@Override
-	public Staff searchStaffById(int staffId) throws Exception {
-		Staff staffs = entityManager.find(Staff.class, staffId);
-        return staffs;
+	public AppUser searchAppUserById(int appUserId) throws Exception {
+		AppUser appUser = entityManager.find(AppUser.class, appUserId);
+        return appUser;
 	}
 
-	@Override
-	public Set<Customer> searchCustomerByStaff(Staff staff) throws Exception {
-		staff = entityManager.find(Staff.class, staff.getStaffId());
-		staff.getCustomerMangement().size();
-        entityManager.refresh(staff);
 
-        return staff.getCustomerMangement();
-	}
 
 }
