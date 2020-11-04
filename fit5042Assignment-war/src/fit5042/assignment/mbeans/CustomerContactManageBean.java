@@ -49,6 +49,7 @@ public class CustomerContactManageBean implements Serializable{
 			
 		}catch(Exception ex){
 			Logger.getLogger(CustomerContactManageBean.class.getName(),null).log(Level.SEVERE, null,ex);
+			ex.printStackTrace();
 		}
 	}
 	

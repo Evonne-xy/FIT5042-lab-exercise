@@ -15,10 +15,12 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 
 
 @Entity
+@Table(name = "CUSTOMERCONTACT2")
 @NamedQueries({
     @NamedQuery(name = CustomerContact.GET_ALL_QUERY_NAME, query = "SELECT c FROM CustomerContact c order by c.contactId desc")})
 
@@ -132,6 +134,8 @@ public class CustomerContact implements Serializable{
 				+ contactPersonalPhone + ", contactGender=" + contactGender + ", customer=" + customer + "]";
 	}
 
+
+	
 
 	
 	

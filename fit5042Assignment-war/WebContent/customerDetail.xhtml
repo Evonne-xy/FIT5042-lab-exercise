@@ -152,11 +152,6 @@
 					</td>
 				</tr>
 				
-				<tr>
-					<td width="100" valign="top">Staff:</td>
-					<td valign="bottom"><h:outputLabel id="CustomerStaff">#{CustomerController.customer.staffId.staffName}</h:outputLabel>
-					</td>
-				</tr>
 			</table>
 			
 			<div class="navbar navbar-inverse">
@@ -188,14 +183,15 @@
 
 						<td>
 								<h:link value="View | " outcome="faces/contactDetail.xhtml">
-										<f:param name="contactID" value="#{status.index + 1}" /></h:link> 
+										<f:param name="contactID" value="#{customerContact.contactId}" /></h:link> 
 										
 								<h:link value="Edit |" outcome="faces/contactEdit.xhtml">
-										<f:param name="contactID" value="#{status.index + 1}" /></h:link>
+										<f:param name="contactID" value="#{customerContact.contactId}" /></h:link>
 										
-								<h:commandLink value="Delete" action="#{removeContact.removeContact(customerContact.contactId)}"
-                             disabled="#{customerContact.contactId == null}"><f:param name="contactID" 
-                             value="#{customerContact.customer.customerId}" />
+								<h:commandLink value="Delete" action="#{removeContact.removeContact()}"
+                             disabled="#{customerContact.contactId == null}">
+                            <f:param name="customerID" value="#{customerContact.customer.customerId}" />
+                            <f:param name="contactID" value="#{customerContact.contactId}"/> 
                              </h:commandLink>
 						</td>
 					</tr>
@@ -204,6 +200,7 @@
 			
 			<div>
 			<h:commandButton id="add" value="Add" action="contactAdd.xhtml" class="btn btn-primary"> 
+			<f:param name="customerID" value="#{CustomerController.customer.customerId}"/>
 			<f:param name="customerAdd" value="#{CustomerController.customer.customerId}"/>
                     </h:commandButton>
 			</div>

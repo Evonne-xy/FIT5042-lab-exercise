@@ -40,14 +40,14 @@ public class Customer implements Serializable{
     private double customerRate;
     private Industry industry;
     private Set<CustomerContact> customerContact;
-    private Staff staffId;
+    private AppUser appUser;
     
     public Customer() {
     	
     }
     
 	public Customer(Integer customerId,String customerName, String customerAddress, String customerCEO, int customerABN,
-			int numOfPeople, double customerRate, Industry industry, Staff staffId) 
+			int numOfPeople, double customerRate, Industry industry, AppUser appUser) 
 	{
 		this.customerId = customerId;
 		this.customerName = customerName;
@@ -57,7 +57,7 @@ public class Customer implements Serializable{
 		NumOfPeople = numOfPeople;
 		this.customerRate = customerRate;
 		this.industry = industry;
-		this.staffId = staffId;
+		this.appUser = appUser;
 		this.customerContact = new HashSet<>();
 		
 	}
@@ -73,6 +73,7 @@ public class Customer implements Serializable{
 		this.customerId = customerId;
 	}
 
+	@Column(name = "customername")
 	public String getCustomerName() {
 		return customerName;
 	}
@@ -132,7 +133,7 @@ public class Customer implements Serializable{
 
 	//Each contactNumber has one and only one contact person. 
     //Each customer might be responsible for zero to many contactNumber
-	@OneToMany (mappedBy = "customer",fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
+	@OneToMany (mappedBy = "customer",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	public Set<CustomerContact> getCustomerContact() {
 		return customerContact;
 	}
@@ -151,22 +152,15 @@ public class Customer implements Serializable{
 	}
 	
 	@ManyToOne
-	public Staff getStaffId() {
-		return staffId;
+	public AppUser getAppUser() {
+		return appUser;
 	}
 
-	public void setStaffId(Staff staffId) {
-		this.staffId = staffId;
+	public void setAppUser(AppUser appUser) {
+		this.appUser = appUser;
 	}
 
-	@Override
-	public String toString() {
-		return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", customerAddress="
-				+ customerAddress + ", customerCEO=" + customerCEO + ", customerABN=" + customerABN + ", NumOfPeople="
-				+ NumOfPeople + ", customerRate=" + customerRate + ", industry=" + industry + ", customerContact="
-				+ customerContact + "]";
-	}
-
+	
 	
     
     

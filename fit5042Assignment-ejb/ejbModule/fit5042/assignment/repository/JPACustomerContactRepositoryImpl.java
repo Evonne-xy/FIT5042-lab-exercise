@@ -3,6 +3,7 @@ package fit5042.assignment.repository;
 import java.util.List;
 import java.util.Set;
 
+import javax.annotation.PreDestroy;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -19,6 +20,11 @@ public class JPACustomerContactRepositoryImpl implements CustomerContactReposito
 			@PersistenceContext(unitName = "fit5042Assignment-ejbPU")
 		    private EntityManager entityManager;
 	
+	/*
+	 * @PreDestroy public void destruct() { entityManager.close(); }
+	 */
+			
+			
 	@Override
 	public List<CustomerContact> getAllCustomerContact() throws Exception {
 		return entityManager.createNamedQuery(CustomerContact.GET_ALL_QUERY_NAME).getResultList();
@@ -28,17 +34,24 @@ public class JPACustomerContactRepositoryImpl implements CustomerContactReposito
 	@Override
 	public void addCustomerContact(CustomerContact customerContact) throws Exception {
 		List<CustomerContact> customerContacts = entityManager.createNamedQuery(customerContact.GET_ALL_QUERY_NAME).getResultList();
-		customerContact.setContactId(customerContacts.get(0).getContactId() + 1);
+		//customerContact.setContactId(100);
+		//customerContact.setContactId(customerContacts.get(0).getContactId() + 1);
+		Customer customer = customerContact.getCustomer();
+		customer.getCustomerContact().add(customerContact);		
+        entityManager.merge(customer);
         entityManager.persist(customerContact);
-        entityManager.flush();
-		
+        entityManager.flush();	
 	}
 
 	@Override
 	public void removeCustomerContact(int customerContactId) throws Exception {
 		CustomerContact customerContact = this.searchCustomerContactById(customerContactId);
         if (customerContact != null) {
+        	Customer customer = customerContact.getCustomer();
+        	customer.getCustomerContact().remove(customerContact);
+        	entityManager.merge(customer);
             entityManager.remove(customerContact);
+            entityManager.flush();	
         }
 		
 	}

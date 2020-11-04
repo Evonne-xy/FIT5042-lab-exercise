@@ -3,9 +3,14 @@ package fit5042.assignment.repository;
 import java.util.List;
 import java.util.Set;
 
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 
 import fit5042.assignment.repository.entities.Customer;
 import fit5042.assignment.repository.entities.CustomerContact;
@@ -71,6 +76,18 @@ public class JPACustomerRepositoryImpl implements CustomerRepository{
 			Customer customers = entityManager.find(Customer.class, customerName);
 	        return customers;
 		}
+		
+		@Override
+	    public List<Customer> searchCustomerByName2(String customerName) throws Exception {
+			
+	    	CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+	    	CriteriaQuery cQuery = builder.createQuery(List.class);
+	    	Root<Customer> eRoot = cQuery.from(Customer.class);
+	    	Predicate predicate = builder.equal(eRoot.get("customerName").as(String.class), customerName);
+	    	cQuery.select(eRoot).where(predicate);
+	        List<Customer> Customers = entityManager.createQuery(cQuery).getResultList(); 
+	    	return Customers;
+	    }
 		
 
 		

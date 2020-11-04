@@ -89,7 +89,7 @@ public class CustomerManageBean implements Serializable{
 
 	        return null;
 	}
-	
+	//-------------------------SEARCH -------------------------------------------
 	public Customer searchCustomerByName(String customerName) {
 		 try {
 	            return customerRepository.searchCustomerByName(customerName);
@@ -100,6 +100,16 @@ public class CustomerManageBean implements Serializable{
 	        return null;
 	}
 	
+	public List<Customer> searchCustomerByName2(String customerName) {
+		 try {
+	            return customerRepository.searchCustomerByName2(customerName);
+	        } catch (Exception ex) {
+	            Logger.getLogger(CustomerManageBean.class.getName()).log(Level.SEVERE, null, ex);
+	        }
+
+	        return null;
+	}
+	//--------------------------------------------------------------------
 	
 	
 	public Set<CustomerContact> searchCustomerContactByCustomer(Customer customer){
@@ -154,13 +164,12 @@ public class CustomerManageBean implements Serializable{
 		customerContacts.add(customerContact);
 		customer.setCustomerContact(customerContacts);
 		
-		int staffId = localCustomer.getStaffId();
-		String staffName = localCustomer.getStaffName();
-		Staff staff = new fit5042.assignment.repository.entities.Staff(staffId,staffName);
-		if (staff.getStaffId() == 0) {
-			staff = null;
-        }
-		customer.setStaffId(staff);
+		/*
+		 * int staffId = localCustomer.getStaffId(); String staffName =
+		 * localCustomer.getStaffName(); Staff staff = new
+		 * fit5042.assignment.repository.entities.Staff(staffId,staffName); if
+		 * (staff.getStaffId() == 0) { staff = null; } customer.setStaffId(staff);
+		 */
 		
 		return customer;
 	}

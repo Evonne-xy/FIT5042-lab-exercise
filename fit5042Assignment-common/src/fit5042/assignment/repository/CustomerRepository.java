@@ -24,6 +24,8 @@ public interface CustomerRepository {
     
     public Customer searchCustomerByName (String customerName) throws Exception;
     
+    public List<Customer> searchCustomerByName2(String customerName) throws Exception;
+    
    
     
 }
